@@ -17,4 +17,4 @@ Enfin, j’ai testé le bon fonctionnement de l’application en lançant le ser
 
 Résultat
 
-Le projet aboutit à une application web fonctionnelle permettant de naviguer entre une liste de produits et une page de détail, illustrant les concepts fondamentaux de Django tels que le routage, la séparation des responsabilités et le rendu dynamique des صفحات. Ce travail constitue une base solide pour le développement d’applications web plus complexes avec Django.
+Le projet aboutit à une application web fonctionnelle permettant de naviguer entre une liste de produits et une page de détail, illustrant les concepts fondamentaux de Django tels que le routage, la séparation des responsabilités . Ce travail constitue une base solide pour le développement d’applications web plus complexes avec Django.
