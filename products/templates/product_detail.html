@@ -1,12 +1,50 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1> Bonjours tout le monde </h1>   
-    <h3>ceci est la page détails du produit {{ id }}</h3>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+
+<nav aria-label="breadcrumb" class="mb-3">
+    <ol class="breadcrumb small">
+        <li class="breadcrumb-item"><a href="{% url 'product_list' %}" class="text-decoration-none">Produits</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+    </ol>
+</nav>
+
+<div class="surface-card overflow-hidden">
+    <div class="row g-0">
+        <div class="col-md-6 bg-light">
+            <div class="ratio ratio-1x1">
+                {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}"
+                         class="w-100 h-100" style="object-fit: cover;">
+                {% else %}
+                    <div class="d-flex align-items-center justify-content-center text-secondary">
+                        <i class="bi bi-image display-1 opacity-50"></i>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="p-4 p-md-5 d-flex flex-column h-100">
+                <span class="badge-soft mb-3 align-self-start">
+                    <i class="bi bi-box-seam me-1"></i>En stock : {{ product.stock }}
+                </span>
+                <h2 class="fw-bold mb-2" style="letter-spacing:-0.02em;">{{ product.name }}</h2>
+                <div class="fs-2 fw-bold mb-3" style="color: var(--brand);">{{ product.price }} DH</div>
+                <p class="text-secondary mb-4">{{ product.description }}</p>
+
+                <div class="mt-auto d-flex gap-2">
+                    <a href="{% url 'product_list' %}" class="btn btn-soft">
+                        <i class="bi bi-arrow-left me-1"></i>Retour
+                    </a>
+                    <button class="btn btn-brand flex-grow-1">
+                        <i class="bi bi-cart-plus me-1"></i>Ajouter au panier
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

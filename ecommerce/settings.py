@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'products',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -116,3 +117,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+# Media files (uploaded product images)
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'images'
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Authentication redirections
+LOGIN_REDIRECT_URL = "profile"
+LOGOUT_REDIRECT_URL = "product_list"
+LOGIN_URL = "login"
