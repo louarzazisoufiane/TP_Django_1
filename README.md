@@ -29,3 +29,5 @@ J’ai écrit quatre vues (liste produits, détail produit, liste catégories, d
 J’ai créé les templates correspondants pour afficher les données.
 J’ai configuré la gestion des images avec Pillow, le dossier images/products et les paramètres MEDIA_ROOT et MEDIA_URL.
 Enfin, j’ai modifié les paramètres de base de données pour passer de SQLite à MySQL avec le connecteur mysqlclient.
+
+l
